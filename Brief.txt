@@ -1,0 +1,29 @@
+GCSE Computer Science: Summer Project  
+Difficulty: Titan  
+Deadline: 7th September 2018 
+
+ 
+
+Your challenge is to research, prototype, test and build a program that has the ability to recognise a person’s face from a photograph: 
+
+  -  The user should be able to input a photograph and the program returns the name of the person within that photograph  
+
+  -  The user should be able to input a batch of photographs and the program returns the name(s) of the person(s) within the batch of photographs 
+
+ 	 -  Example output: “In photograph 1 there was ‘Mr Smith, Mr Jones, and Mrs Jones”,  
+
+  -  The user should be able to input a name, ie. Mrs Jones, and it returns every photograph that person appears in 
+
+  -  Mr W should be able to give the program 10 photographs of 3 different people (30 photographs in total) and the program should be able to name each of the 3 people.  
+
+  	-  This is Facebook/Google-level of complexity. Not for the faint hearted. 
+
+ 
+
+Rules: 
+All work must be your own – we don’t want to see code from Stack Exchange/Stack Overflow for example. 
+No existing APIs to be used 
+You can use any programming language you see fit 
+You can use any pre-existing libraries built into your language of choice 
+You can ask us for help should you need it 
+All code must have suitable comments  
