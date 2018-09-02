@@ -6,10 +6,10 @@ import sys;
 
 TFR_subjects = dict();
 
-TFR_cascade_path = string();
+TFR_cascade_path = variable();
 
 
-def detect_face(img):
+def TFR_face_detect(img):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY);
     
     TFR_bool_cascade_check = os.path.isfile(TFR_cascade_path);
@@ -22,22 +22,34 @@ def detect_face(img):
 
         face_cascade = cv2.CascadeClassifier(TFR_cascade_path);
 
-        faces = face_cascade.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5);
+        TFR_faces = face_cascade.detectMultiScale(gray, scaleFactor=1.2, minNeighbors=5);
     
-        if (len(faces) == 0):
+        if (len(TFR_faces) == 0):
             return None, None;
             raise ValueError('Error: No faces detected.');
-    
-        #(x, y, w, h) = faces[0];                      #Single Face
-        #return gray[y:y+w, x:x+h], faces[0];          #|
 
-        counter = 0;
-        for ( x, y, w, h ) in faces:                   #Multi Face
-            ( x, y, w, h ) = faces[counter];           #|
-            return gray[y:y+w, x:x+h], faces[counter]; #| 
-            counter += 1;                              #|   
+        if TFR_mode_select = 0:
+            TFR_detection = TFR_single_face_detect();
+            return TFR_detection;
+        elif TFR_mode_select = 1:
+            TFR_detection = TFR_multi_face_detect();
+            return TFR_detection;
     
-def prepare_training_data(data_folder_path):
+    
+def TFR_single_face_detect(func_faces):
+    (x, y, w, h) = faces[0];                      
+    return gray[y:y+w, x:x+h], faces[0];          
+
+def TFR_multi_face_detect(func_faces):
+    TFR_counter = 0;
+    for ( x, y, w, h ) in func_faces:                   
+        ( x, y, w, h ) = func_faces[TFR_counter];
+        return gray[y:y+w, x:x+h], func_faces[TFR_counter];
+        TFR_counter += 1;   
+    
+
+
+def TFR_prepare_training_data(data_folder_path):
     
     dirs = os.listdir(data_folder_path);
     
